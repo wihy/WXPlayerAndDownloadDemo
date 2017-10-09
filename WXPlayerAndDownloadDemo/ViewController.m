@@ -99,10 +99,20 @@
     
     NSInteger index = cell.tag;
     NSDictionary *audioDict = self.audioList[index];
-    [self.playList addObject:[NSURL URLWithString:audioDict[@"audio"]]];
+    NSString *playUrl = audioDict[@"audio"];
+    
+    for (int i = 0; i < self.playList.count; i++) {
+        NSURL *playURL = self.playList[i];
+        if ([playURL.absoluteString isEqualToString:playUrl]) {
+            [[WXAudioQueuePlayer sharedPlayer] playFromPlaylist:self.playList itemIndex:i];
+            return;
+        }
+    }
+    [self.playList addObject:[NSURL URLWithString:playUrl]];
     
 //    [[WXAudioQueuePlayer sharedPlayer] playWithItem:[NSURL URLWithString:audioDict[@"audio"]]];
     [[WXAudioQueuePlayer sharedPlayer] playFromPlaylist:self.playList itemIndex:self.playList.count-1];
+    
 }
 
 
