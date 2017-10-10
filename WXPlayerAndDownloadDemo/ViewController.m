@@ -8,9 +8,8 @@
 
 #import "ViewController.h"
 #import "WXAudioListCell.h"
-#import "AFNetworking.h"
-#import "WXDownloadManager.h"
-#import "WXAudioQueuePlayer.h"
+#import <WXAudioDownloadManager/WXDownloadManager.h>
+#import <WXAudioDownloadManager/WXAudioQueuePlayer.h>
 
 @interface ViewController ()<WXAudioListCellDelegate,WXDownloadManagerDelegate,WXAudioQueuePlayerDelegate>
 
@@ -41,23 +40,36 @@
 -(void)loadAudioList{
     
     NSString *audioUrl = @"https://cimili.com/api/v1/favorite/get/track";
-    AFHTTPSessionManager *httpSession = [AFHTTPSessionManager manager];
-    [httpSession.requestSerializer setValue:@"abc123" forHTTPHeaderField:@"apikey"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:audioUrl]];
+    [request setValue:@"abc123" forHTTPHeaderField:@"apikey"];
+    
     __weak typeof(self) weakSelf = self;
-    [httpSession GET:audioUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
         
-        NSArray *dataList = responseObject[@"data"];
-        if ([dataList isKindOfClass:[NSArray class]]) {
-            weakSelf.audioList = dataList;
-            [weakSelf.tableView reloadData];
+        if (error) {
+             NSLog(@"**** %@ ",error);
         }
         else{
-            NSLog(@"**** %@ ",responseObject);
+            
+            NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            if ([responseDict isKindOfClass:[NSDictionary class]]) {
+                NSArray *dataList = responseDict[@"data"];
+                if ([dataList isKindOfClass:[NSArray class]]) {
+                    weakSelf.audioList = dataList;
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                       [weakSelf.tableView reloadData];
+                    });
+                    
+                }
+                else{
+                    NSLog(@"**** %@ ",responseDict);
+                }
+            }
         }
         
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"**** %@ ",error);
     }];
+    [dataTask resume];
     
 }
 
