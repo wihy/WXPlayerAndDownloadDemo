@@ -12,6 +12,14 @@
 #import <WXAudioDownloadManager/WXAudioQueuePlayer.h>
 
 @interface ViewController ()<WXAudioListCellDelegate,WXDownloadManagerDelegate,WXAudioQueuePlayerDelegate>
+{
+    
+    NSInteger _playbackTimes;
+    
+    NSInteger _playbackModelIndex;
+}
+@property (nonatomic, strong) NSArray *playbackModels;
+@property (nonatomic, strong) NSArray *playbackTypes;
 
 @property (nonatomic, strong) NSArray *audioList;
 
@@ -27,15 +35,63 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.playList = [NSMutableArray array];
+    _playbackTimes = 1;
+    _playbackModelIndex = 0;
     
-    ///是要未登录用户目录
+    ///三种播放模式
+    self.playbackModels = @[@"顺序播放",@"随机播放",@"单曲循环"];
+    self.playbackTypes = @[@(WXListPlaybackTypeSequence),@(WXListPlaybackTypeRandom),@(WXListPlaybackTypeLoop)];
+    
+    ///需要先设置当前的用户id，以保证用户的下载路径唯一
     [[WXDownloadManager sharedDownloadManager] resetDownloadTaskForUser:0];
+    
+    ///设置播放器和下载器的代理回调
     [WXDownloadManager sharedDownloadManager].delegate = self;
     
     [WXAudioQueuePlayer sharedPlayer].delegate = self;
     
+    //
+    UIBarButtonItem *playTimesItem =  [[UIBarButtonItem alloc] initWithTitle:@"次数:1" style:UIBarButtonItemStyleDone target:self action:@selector(onPlaytimesDidClick:)];
+    self.navigationItem.leftBarButtonItem = playTimesItem;
+    
+    UIBarButtonItem *playbackModelItem =  [[UIBarButtonItem alloc] initWithTitle:@"顺序播放" style:UIBarButtonItemStyleDone target:self action:@selector(onPlaybackModelDidClick:)];
+    self.navigationItem.rightBarButtonItem = playbackModelItem;
+    
+    ///设置循环播放次数和播放模式
+    [WXAudioQueuePlayer sharedPlayer].playbackLoopTimes = _playbackTimes;
+    [WXAudioQueuePlayer sharedPlayer].playbackLoopTimes = [self.playbackModels[_playbackModelIndex] integerValue];
+    
     [self loadAudioList];
 }
+
+
+-(void)onPlaytimesDidClick:(UIBarButtonItem *)barItem{
+    
+    ///设置播放次数，目前支持1-9
+    if (_playbackTimes >= 9) {
+        _playbackTimes = 1;
+    }
+    else{
+        _playbackTimes++;
+    }
+    [WXAudioQueuePlayer sharedPlayer].playbackLoopTimes = _playbackTimes;
+    barItem.title = [NSString stringWithFormat:@"次数:%ld",_playbackTimes];
+}
+
+-(void)onPlaybackModelDidClick:(UIBarButtonItem *)barItem{
+    
+    ///设置播放模式，:顺序，随机，循环
+    if (_playbackModelIndex >= 2) {
+        _playbackModelIndex = 0;
+    }
+    else{
+        _playbackModelIndex++;
+    }
+    [WXAudioQueuePlayer sharedPlayer].playbackLoopTimes = [self.playbackModels[_playbackModelIndex] integerValue];
+    barItem.title = [NSString stringWithFormat:@"%@",self.playbackModels[_playbackModelIndex]];
+    
+}
+
 
 -(void)loadAudioList{
     
@@ -102,6 +158,7 @@
 #pragma mark ---  WXAudioListCellDelegate
 -(void)onDownloadDidClick:(WXAudioListCell*)cell{
     
+    ///下载单条声音
     NSInteger index = cell.tag;
     NSDictionary *audioDict = self.audioList[index];
     [[WXDownloadManager sharedDownloadManager] startAudioDownloadWithURL:audioDict[@"audio"]];
@@ -122,7 +179,11 @@
     }
     [self.playList addObject:[NSURL URLWithString:playUrl]];
     
+    
+    ///播放单个声音
 //    [[WXAudioQueuePlayer sharedPlayer] playWithItem:[NSURL URLWithString:audioDict[@"audio"]]];
+    
+    ///播放列表并从最后位置播放
     [[WXAudioQueuePlayer sharedPlayer] playFromPlaylist:self.playList itemIndex:self.playList.count-1];
     
 }
