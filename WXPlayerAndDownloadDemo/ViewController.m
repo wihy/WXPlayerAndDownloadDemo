@@ -59,7 +59,7 @@
     
     ///设置循环播放次数和播放模式
     [WXAudioQueuePlayer sharedPlayer].playbackLoopTimes = _playbackTimes;
-    [WXAudioQueuePlayer sharedPlayer].playbackLoopTimes = [self.playbackModels[_playbackModelIndex] integerValue];
+    [WXAudioQueuePlayer sharedPlayer].playbackType = [self.playbackTypes[_playbackModelIndex] integerValue];
     
     [self loadAudioList];
 }
@@ -87,7 +87,7 @@
     else{
         _playbackModelIndex++;
     }
-    [WXAudioQueuePlayer sharedPlayer].playbackLoopTimes = [self.playbackModels[_playbackModelIndex] integerValue];
+    [WXAudioQueuePlayer sharedPlayer].playbackType = [self.playbackTypes[_playbackModelIndex] integerValue];
     barItem.title = [NSString stringWithFormat:@"%@",self.playbackModels[_playbackModelIndex]];
     
 }

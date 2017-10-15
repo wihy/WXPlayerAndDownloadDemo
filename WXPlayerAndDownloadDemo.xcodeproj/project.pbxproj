@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EA1921C11F8CFD0400CC6747 /* WXAudioDownloadManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1921C01F8CFD0400CC6747 /* WXAudioDownloadManager.framework */; };
 		EA1921C31F8CFD1D00CC6747 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1921C21F8CFD1D00CC6747 /* Foundation.framework */; };
-		EA1921C51F8CFF5E00CC6747 /* WXAudioDownloadManager.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA1921C01F8CFD0400CC6747 /* WXAudioDownloadManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EA6B7F891F932C90004476DF /* WXAudioDownloadManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6B7F881F932C90004476DF /* WXAudioDownloadManager.framework */; };
+		EA6B7F8B1F932CA0004476DF /* WXAudioDownloadManager.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA6B7F881F932C90004476DF /* WXAudioDownloadManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EAD66D321F7BF1F600B5D1B0 /* WXAudioListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD66D311F7BF1F600B5D1B0 /* WXAudioListCell.m */; };
 		EAFCB7841F7AB09200E26E76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFCB7831F7AB09200E26E76 /* AppDelegate.m */; };
 		EAFCB7871F7AB09200E26E76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFCB7861F7AB09200E26E76 /* ViewController.m */; };
@@ -20,21 +20,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		EA1921C41F8CFF5200CC6747 /* CopyFiles */ = {
+		EA6B7F8A1F932C96004476DF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EA1921C51F8CFF5E00CC6747 /* WXAudioDownloadManager.framework in CopyFiles */,
+				EA6B7F8B1F932CA0004476DF /* WXAudioDownloadManager.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EA1921C01F8CFD0400CC6747 /* WXAudioDownloadManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WXAudioDownloadManager.framework; sourceTree = "<group>"; };
 		EA1921C21F8CFD1D00CC6747 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA6B7F881F932C90004476DF /* WXAudioDownloadManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WXAudioDownloadManager.framework; path = WXPlayerAndDownloadDemo/WXAudioDownloadManager.framework; sourceTree = "<group>"; };
 		EAD66D301F7BF1F600B5D1B0 /* WXAudioListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXAudioListCell.h; sourceTree = "<group>"; };
 		EAD66D311F7BF1F600B5D1B0 /* WXAudioListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXAudioListCell.m; sourceTree = "<group>"; };
 		EAFCB77F1F7AB09200E26E76 /* WXPlayerAndDownloadDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXPlayerAndDownloadDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,8 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA6B7F891F932C90004476DF /* WXAudioDownloadManager.framework in Frameworks */,
 				EA1921C31F8CFD1D00CC6747 /* Foundation.framework in Frameworks */,
-				EA1921C11F8CFD0400CC6747 /* WXAudioDownloadManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +73,7 @@
 		EAFCB7761F7AB09200E26E76 = {
 			isa = PBXGroup;
 			children = (
-				EA1921C01F8CFD0400CC6747 /* WXAudioDownloadManager.framework */,
+				EA6B7F881F932C90004476DF /* WXAudioDownloadManager.framework */,
 				EAFCB7811F7AB09200E26E76 /* WXPlayerAndDownloadDemo */,
 				EAFCB7801F7AB09200E26E76 /* Products */,
 				EAD66D331F7BF62B00B5D1B0 /* Frameworks */,
@@ -116,7 +116,7 @@
 				EAFCB77B1F7AB09200E26E76 /* Sources */,
 				EAFCB77C1F7AB09200E26E76 /* Frameworks */,
 				EAFCB77D1F7AB09200E26E76 /* Resources */,
-				EA1921C41F8CFF5200CC6747 /* CopyFiles */,
+				EA6B7F8A1F932C96004476DF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -325,6 +325,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/WXPlayerAndDownloadDemo",
 				);
 				INFOPLIST_FILE = WXPlayerAndDownloadDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -344,6 +345,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/WXPlayerAndDownloadDemo",
 				);
 				INFOPLIST_FILE = WXPlayerAndDownloadDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
