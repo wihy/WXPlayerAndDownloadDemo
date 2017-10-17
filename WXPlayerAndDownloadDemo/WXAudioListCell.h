@@ -13,7 +13,10 @@
 
 @optional
 -(void)onDownloadDidClick:(WXAudioListCell*)cell;
+-(void)onRemoveDidClick:(WXAudioListCell*)cell;
 -(void)onPlayOrNotDidClick:(WXAudioListCell*)cell;
+    
+    
 
 @end
 

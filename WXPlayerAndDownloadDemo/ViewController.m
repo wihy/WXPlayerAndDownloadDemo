@@ -25,6 +25,11 @@
 
 @property (nonatomic, strong) NSMutableArray *playList;
 
+    
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *preItem;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *pauseOrPlayItem;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *nextItem;
+    
 
 @end
 
@@ -90,6 +95,37 @@
     [WXAudioQueuePlayer sharedPlayer].playbackType = [self.playbackTypes[_playbackModelIndex] integerValue];
     barItem.title = [NSString stringWithFormat:@"%@",self.playbackModels[_playbackModelIndex]];
     
+}
+
+    
+-(IBAction)onPreDidClick:(id)sender{
+    
+    [[WXAudioQueuePlayer sharedPlayer] playPre];
+}
+
+-(IBAction)onNextDidClick:(id)sender{
+    
+    [[WXAudioQueuePlayer sharedPlayer] playNext];
+}
+    
+-(IBAction)onPlayOrPauseDidClick:(id)sender{
+    
+    ///使用pause和resume用于从暂停的地方播放
+    if([WXAudioQueuePlayer sharedPlayer].isPlaying){
+        [[WXAudioQueuePlayer sharedPlayer] pause];
+    }
+    else{
+        [[WXAudioQueuePlayer sharedPlayer] resume];
+    }
+ 
+//      //使用stop和play用于从头开始播放
+//        if([WXAudioQueuePlayer sharedPlayer].isPlaying){
+//            [[WXAudioQueuePlayer sharedPlayer] stop];
+//        }
+//        else{
+//            [[WXAudioQueuePlayer sharedPlayer] play];
+//        }
+
 }
 
 
@@ -164,6 +200,15 @@
     [[WXDownloadManager sharedDownloadManager] startAudioDownloadWithURL:audioDict[@"audio"]];
     
 }
+    
+-(void)onRemoveDidClick:(WXAudioListCell *)cell{
+    
+    //删除
+    NSInteger index = cell.tag;
+    NSDictionary *audioDict = self.audioList[index];
+    [[WXDownloadManager sharedDownloadManager] deleteAudioDownloadWithURL:audioDict[@"audio"]];
+}
+    
 -(void)onPlayOrNotDidClick:(WXAudioListCell*)cell{
     
     NSInteger index = cell.tag;
@@ -192,6 +237,8 @@
 #pragma mark --  WXDownloadManagerDelegate
 -(void)downloadURLDidRemove:(NSString *)url{
     NSLog(@"****** %s ,%@",__func__,url);
+    
+    [self.tableView reloadData];
 }
 
 -(void)downloadURLDidStart:(NSString *)url{
@@ -222,14 +269,19 @@
 -(void)onAudioPlayerDidPlaying:(WXAudioQueuePlayer*)player playItem:(NSURL*)item{
      NSLog(@"****** %s ,%@",__func__,item.absoluteString);
     
+    self.pauseOrPlayItem.title = @"暂停";
 }
 
 -(void)onAudioPlayerDidStop:(WXAudioQueuePlayer*)player playItem:(NSURL*)item{
      NSLog(@"****** %s ,%@",__func__,item.absoluteString);
+    
+    self.pauseOrPlayItem.title = @"播放";
 }
 
 -(void)onAudioPlayerDidPause:(WXAudioQueuePlayer*)player playItem:(NSURL*)item{
     NSLog(@"****** %s ,%@",__func__,item.absoluteString);
+    
+    self.pauseOrPlayItem.title = @"播放";
 }
 
 -(void)onAudioPlayerDidEnd:(WXAudioQueuePlayer*)player playItem:(NSURL*)item{

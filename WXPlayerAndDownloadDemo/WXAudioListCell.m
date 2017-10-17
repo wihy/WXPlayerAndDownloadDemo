@@ -28,6 +28,13 @@
         [self.delegate onDownloadDidClick:self];
     }
 }
+    
+-(IBAction)onRemoveClicked:(id)sender{
+    
+    if ([self.delegate respondsToSelector:@selector(onRemoveDidClick:)]) {
+        [self.delegate onRemoveDidClick:self];
+    }
+}
 
 -(IBAction)onPlayClicked:(id)sender{
     

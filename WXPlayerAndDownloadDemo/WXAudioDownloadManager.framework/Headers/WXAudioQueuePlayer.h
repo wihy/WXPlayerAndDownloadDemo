@@ -81,6 +81,8 @@ typedef NS_ENUM(NSInteger, WXAudioPlayerError) {
 
 /// 播放控制
 -(void)pause;
+-(void)resume;
+    
 -(void)play;
 -(void)stop;
 
