@@ -67,6 +67,7 @@
     [WXAudioQueuePlayer sharedPlayer].playbackType = [self.playbackTypes[_playbackModelIndex] integerValue];
     
     [self loadAudioList];
+
 }
 
 
