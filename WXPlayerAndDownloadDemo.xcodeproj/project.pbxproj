@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EA5F25A51F9640BA00DE8868 /* WXAudioDownloadManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5F25A31F9640AD00DE8868 /* WXAudioDownloadManager.framework */; };
-		EA5F25A61F9640BA00DE8868 /* WXAudioDownloadManager.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA5F25A31F9640AD00DE8868 /* WXAudioDownloadManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EAD66D321F7BF1F600B5D1B0 /* WXAudioListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD66D311F7BF1F600B5D1B0 /* WXAudioListCell.m */; };
-		EAFCB7841F7AB09200E26E76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFCB7831F7AB09200E26E76 /* AppDelegate.m */; };
-		EAFCB7871F7AB09200E26E76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFCB7861F7AB09200E26E76 /* ViewController.m */; };
-		EAFCB78A1F7AB09200E26E76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFCB7881F7AB09200E26E76 /* Main.storyboard */; };
-		EAFCB78C1F7AB09200E26E76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAFCB78B1F7AB09200E26E76 /* Assets.xcassets */; };
-		EAFCB78F1F7AB09200E26E76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFCB78D1F7AB09200E26E76 /* LaunchScreen.storyboard */; };
-		EAFCB7921F7AB09200E26E76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFCB7911F7AB09200E26E76 /* main.m */; };
+		E758EBA41F978E8C00883222 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E758EB981F978E8C00883222 /* Assets.xcassets */; };
+		E758EBA51F978E8C00883222 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E758EB991F978E8C00883222 /* ViewController.m */; };
+		E758EBA61F978E8C00883222 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E758EB9A1F978E8C00883222 /* LaunchScreen.storyboard */; };
+		E758EBA71F978E8C00883222 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E758EB9C1F978E8C00883222 /* Main.storyboard */; };
+		E758EBA81F978E8C00883222 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E758EB9E1F978E8C00883222 /* main.m */; };
+		E758EBA91F978E8C00883222 /* WXAudioListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E758EB9F1F978E8C00883222 /* WXAudioListCell.m */; };
+		E758EBAA1F978E8C00883222 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E758EBA01F978E8C00883222 /* AppDelegate.m */; };
+		E758EBAB1F978E8C00883222 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E758EBA11F978E8C00883222 /* Info.plist */; };
+		E758EBAC1F978E8C00883222 /* WXAudioDownloadManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E758EBA31F978E8C00883222 /* WXAudioDownloadManager.framework */; };
+		E758EBAE1F978F1900883222 /* WXAudioDownloadManager.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E758EBA31F978E8C00883222 /* WXAudioDownloadManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,27 +26,27 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EA5F25A61F9640BA00DE8868 /* WXAudioDownloadManager.framework in CopyFiles */,
+				E758EBAE1F978F1900883222 /* WXAudioDownloadManager.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E758EB961F978E8C00883222 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E758EB971F978E8C00883222 /* WXAudioListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXAudioListCell.h; sourceTree = "<group>"; };
+		E758EB981F978E8C00883222 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E758EB991F978E8C00883222 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E758EB9B1F978E8C00883222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E758EB9D1F978E8C00883222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E758EB9E1F978E8C00883222 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E758EB9F1F978E8C00883222 /* WXAudioListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXAudioListCell.m; sourceTree = "<group>"; };
+		E758EBA01F978E8C00883222 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E758EBA11F978E8C00883222 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E758EBA21F978E8C00883222 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E758EBA31F978E8C00883222 /* WXAudioDownloadManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WXAudioDownloadManager.framework; sourceTree = "<group>"; };
 		EA1921C21F8CFD1D00CC6747 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		EA5F25A31F9640AD00DE8868 /* WXAudioDownloadManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WXAudioDownloadManager.framework; path = WXPlayerAndDownloadDemo/WXAudioDownloadManager.framework; sourceTree = "<group>"; };
-		EAD66D301F7BF1F600B5D1B0 /* WXAudioListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXAudioListCell.h; sourceTree = "<group>"; };
-		EAD66D311F7BF1F600B5D1B0 /* WXAudioListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXAudioListCell.m; sourceTree = "<group>"; };
 		EAFCB77F1F7AB09200E26E76 /* WXPlayerAndDownloadDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXPlayerAndDownloadDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EAFCB7821F7AB09200E26E76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		EAFCB7831F7AB09200E26E76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EAFCB7851F7AB09200E26E76 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EAFCB7861F7AB09200E26E76 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		EAFCB7891F7AB09200E26E76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EAFCB78B1F7AB09200E26E76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EAFCB78E1F7AB09200E26E76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EAFCB7901F7AB09200E26E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EAFCB7911F7AB09200E26E76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,13 +54,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA5F25A51F9640BA00DE8868 /* WXAudioDownloadManager.framework in Frameworks */,
+				E758EBAC1F978E8C00883222 /* WXAudioDownloadManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E758EB951F978E8C00883222 /* WXPlayerAndDownloadDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E758EB961F978E8C00883222 /* AppDelegate.h */,
+				E758EB971F978E8C00883222 /* WXAudioListCell.h */,
+				E758EB981F978E8C00883222 /* Assets.xcassets */,
+				E758EB991F978E8C00883222 /* ViewController.m */,
+				E758EB9A1F978E8C00883222 /* LaunchScreen.storyboard */,
+				E758EB9C1F978E8C00883222 /* Main.storyboard */,
+				E758EB9E1F978E8C00883222 /* main.m */,
+				E758EB9F1F978E8C00883222 /* WXAudioListCell.m */,
+				E758EBA01F978E8C00883222 /* AppDelegate.m */,
+				E758EBA11F978E8C00883222 /* Info.plist */,
+				E758EBA21F978E8C00883222 /* ViewController.h */,
+				E758EBA31F978E8C00883222 /* WXAudioDownloadManager.framework */,
+			);
+			path = WXPlayerAndDownloadDemo;
+			sourceTree = "<group>";
+		};
 		EAD66D331F7BF62B00B5D1B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,8 +91,7 @@
 		EAFCB7761F7AB09200E26E76 = {
 			isa = PBXGroup;
 			children = (
-				EA5F25A31F9640AD00DE8868 /* WXAudioDownloadManager.framework */,
-				EAFCB7811F7AB09200E26E76 /* WXPlayerAndDownloadDemo */,
+				E758EB951F978E8C00883222 /* WXPlayerAndDownloadDemo */,
 				EAFCB7801F7AB09200E26E76 /* Products */,
 				EAD66D331F7BF62B00B5D1B0 /* Frameworks */,
 			);
@@ -84,24 +103,6 @@
 				EAFCB77F1F7AB09200E26E76 /* WXPlayerAndDownloadDemo.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		EAFCB7811F7AB09200E26E76 /* WXPlayerAndDownloadDemo */ = {
-			isa = PBXGroup;
-			children = (
-				EAFCB7821F7AB09200E26E76 /* AppDelegate.h */,
-				EAFCB7831F7AB09200E26E76 /* AppDelegate.m */,
-				EAFCB7851F7AB09200E26E76 /* ViewController.h */,
-				EAFCB7861F7AB09200E26E76 /* ViewController.m */,
-				EAFCB7881F7AB09200E26E76 /* Main.storyboard */,
-				EAFCB78B1F7AB09200E26E76 /* Assets.xcassets */,
-				EAFCB78D1F7AB09200E26E76 /* LaunchScreen.storyboard */,
-				EAFCB7901F7AB09200E26E76 /* Info.plist */,
-				EAFCB7911F7AB09200E26E76 /* main.m */,
-				EAD66D301F7BF1F600B5D1B0 /* WXAudioListCell.h */,
-				EAD66D311F7BF1F600B5D1B0 /* WXAudioListCell.m */,
-			);
-			path = WXPlayerAndDownloadDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,9 +169,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAFCB78F1F7AB09200E26E76 /* LaunchScreen.storyboard in Resources */,
-				EAFCB78C1F7AB09200E26E76 /* Assets.xcassets in Resources */,
-				EAFCB78A1F7AB09200E26E76 /* Main.storyboard in Resources */,
+				E758EBAB1F978E8C00883222 /* Info.plist in Resources */,
+				E758EBA71F978E8C00883222 /* Main.storyboard in Resources */,
+				E758EBA41F978E8C00883222 /* Assets.xcassets in Resources */,
+				E758EBA61F978E8C00883222 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,30 +183,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAFCB7871F7AB09200E26E76 /* ViewController.m in Sources */,
-				EAD66D321F7BF1F600B5D1B0 /* WXAudioListCell.m in Sources */,
-				EAFCB7921F7AB09200E26E76 /* main.m in Sources */,
-				EAFCB7841F7AB09200E26E76 /* AppDelegate.m in Sources */,
+				E758EBAA1F978E8C00883222 /* AppDelegate.m in Sources */,
+				E758EBA81F978E8C00883222 /* main.m in Sources */,
+				E758EBA91F978E8C00883222 /* WXAudioListCell.m in Sources */,
+				E758EBA51F978E8C00883222 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EAFCB7881F7AB09200E26E76 /* Main.storyboard */ = {
+		E758EB9A1F978E8C00883222 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EAFCB7891F7AB09200E26E76 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EAFCB78D1F7AB09200E26E76 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EAFCB78E1F7AB09200E26E76 /* Base */,
+				E758EB9B1F978E8C00883222 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E758EB9C1F978E8C00883222 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E758EB9D1F978E8C00883222 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -326,6 +328,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/WXPlayerAndDownloadDemo",
+					"$(PROJECT_DIR)/WXPlayerAndDownloadDemo\\ copy",
+					"$(PROJECT_DIR)/WXPlayerAndDownloadDemo\\ copy",
 				);
 				INFOPLIST_FILE = WXPlayerAndDownloadDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -350,6 +354,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/WXPlayerAndDownloadDemo",
+					"$(PROJECT_DIR)/WXPlayerAndDownloadDemo\\ copy",
+					"$(PROJECT_DIR)/WXPlayerAndDownloadDemo\\ copy",
 				);
 				INFOPLIST_FILE = WXPlayerAndDownloadDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
