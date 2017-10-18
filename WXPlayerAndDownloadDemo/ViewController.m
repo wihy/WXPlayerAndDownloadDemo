@@ -149,6 +149,11 @@
                 if ([dataList isKindOfClass:[NSArray class]]) {
                     weakSelf.audioList = dataList;
                     
+                    for (NSDictionary *audioDict in dataList) {
+                        NSString *playUrl = audioDict[@"audio"];
+                        [weakSelf.playList addObject:[NSURL URLWithString:playUrl]];
+                    }
+                    
                     dispatch_async(dispatch_get_main_queue(), ^{
                        [weakSelf.tableView reloadData];
                     });
@@ -219,17 +224,16 @@
         NSURL *playURL = self.playList[i];
         if ([playURL.absoluteString isEqualToString:playUrl]) {
             [[WXAudioQueuePlayer sharedPlayer] playFromPlaylist:self.playList itemIndex:i];
-            return;
+            break;
         }
     }
-    [self.playList addObject:[NSURL URLWithString:playUrl]];
     
     
     ///播放单个声音
 //    [[WXAudioQueuePlayer sharedPlayer] playWithItem:[NSURL URLWithString:audioDict[@"audio"]]];
     
     ///播放列表并从最后位置播放
-    [[WXAudioQueuePlayer sharedPlayer] playFromPlaylist:self.playList itemIndex:self.playList.count-1];
+//    [[WXAudioQueuePlayer sharedPlayer] playFromPlaylist:self.playList itemIndex:self.playList.count-1];
     
 }
 

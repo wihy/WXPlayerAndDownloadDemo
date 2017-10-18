@@ -137,7 +137,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Vmt-ja-aEL"/>
-                        <barButtonItem title="暂停" id="hRQ-Ee-Ds9">
+                        <barButtonItem title="播放" id="hRQ-Ee-Ds9">
                             <connections>
                                 <action selector="onPlayOrPauseDidClick:" destination="O1L-5U-4w4" id="ZBL-lt-6WO"/>
                             </connections>
