@@ -76,6 +76,9 @@ typedef NS_ENUM(NSInteger, WXAudioPlayerError) {
 
 +(instancetype)sharedPlayer;
 
+/// 用来设置audioSession
+-(void)activeAudioSessionPlayback;
+
 /*! @brief 单个播放当前的音频,会清除原有的播放列表,并只保留当前一个 */ 
 -(void)playWithItem:(NSURL *)item;
 

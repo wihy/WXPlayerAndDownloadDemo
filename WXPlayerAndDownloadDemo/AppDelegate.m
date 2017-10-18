@@ -7,13 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import <AVFoundation/AVFoundation.h>
+#import <WXAudioDownloadManager/WXAudioQueuePlayer.h>
 
 @interface AppDelegate ()
-{
-    
-        UIBackgroundTaskIdentifier _backgroundTask;
-}
+
 @end
 
 @implementation AppDelegate
@@ -42,6 +39,8 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    
+    [[WXAudioQueuePlayer sharedPlayer] activeAudioSessionPlayback];
 }
 
 
