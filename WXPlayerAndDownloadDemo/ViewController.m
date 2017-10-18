@@ -55,7 +55,7 @@
     
     [WXAudioQueuePlayer sharedPlayer].delegate = self;
     
-    //
+    ///
     UIBarButtonItem *playTimesItem =  [[UIBarButtonItem alloc] initWithTitle:@"次数:1" style:UIBarButtonItemStyleDone target:self action:@selector(onPlaytimesDidClick:)];
     self.navigationItem.leftBarButtonItem = playTimesItem;
     
