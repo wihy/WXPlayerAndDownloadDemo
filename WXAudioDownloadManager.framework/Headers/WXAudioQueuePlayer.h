@@ -71,7 +71,7 @@ typedef NS_ENUM(NSInteger, WXAudioPlayerError) {
 @property (nonatomic, assign) WXListPlaybackType playbackType; //!< 播放模式
 @property (nonatomic, assign) NSInteger playbackLoopTimes; //!< 单曲播放次数，1-9次否则设置不成功
 
-@property (nonatomic, assign, readonly) NSURL *curURL;
+@property (nonatomic, assign, readonly) NSURL *currentURL;
 @property (nonatomic, assign, readonly) BOOL isPlaying;
 
 +(instancetype)sharedPlayer;
