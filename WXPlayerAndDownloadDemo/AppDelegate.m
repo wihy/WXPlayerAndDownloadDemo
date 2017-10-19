@@ -19,6 +19,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    ///用于设置播放和接收耳机事件
+    [[WXAudioQueuePlayer sharedPlayer] activeAudioSessionPlayback];
+    [[WXAudioQueuePlayer sharedPlayer] acceptRemoteCommandEvents];
+    
     return YES;
 }
 

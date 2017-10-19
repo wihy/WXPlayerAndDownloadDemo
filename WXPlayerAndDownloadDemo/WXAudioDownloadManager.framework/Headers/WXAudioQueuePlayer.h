@@ -79,6 +79,9 @@ typedef NS_ENUM(NSInteger, WXAudioPlayerError) {
 /// 用来设置audioSession
 -(void)activeAudioSessionPlayback;
 
+/*! 接收事件控制 */
+-(void)acceptRemoteCommandEvents;
+
 /*! @brief 单个播放当前的音频,会清除原有的播放列表,并只保留当前一个 */ 
 -(void)playWithItem:(NSURL *)item;
 
@@ -94,8 +97,8 @@ typedef NS_ENUM(NSInteger, WXAudioPlayerError) {
 -(void)changeVolume:(float)volume;
 
 /// 上一首或下一首
--(void)playNext;
--(void)playPre;
+-(BOOL)playNext;
+-(BOOL)playPre;
 
 /*! @brief 按照播放列表模式进行播放,注意：播放器不维护列表中地址是否重复，需要上层进行判断 */
 -(void)playFromPlaylist:(NSArray<NSURL *> *)playlist itemIndex:(NSUInteger)index;
